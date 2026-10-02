@@ -1,0 +1,374 @@
+{
+  "data_quality": {
+    "rows": 48000,
+    "negative_weight": 292,
+    "missing_weight": 300,
+    "weight_at_47500_cap": 1204,
+    "missing_market_index": 374,
+    "label_outliers_removed": 677,
+    "validation_negative_weight": 145,
+    "validation_missing_weight": 165,
+    "validation_weight_at_47500_cap": 301,
+    "validation_missing_market_index": 249,
+    "validation_cities_not_in_training": [
+      "Allentown",
+      "Charlotte",
+      "Chicago",
+      "Jackson",
+      "Knoxville",
+      "Laredo",
+      "Norfolk",
+      "San Diego"
+    ]
+  },
+  "backtests": {
+    "Fold A": {
+      "train_window": "2025-01-01 .. 2025-04-30",
+      "test_window": "2025-05-01 .. 2025-06-30",
+      "n_train": 18835,
+      "n_test": 9696,
+      "models": {
+        "Baseline: median rate-per-mile x distance": {
+          "clean_labels": {
+            "n": 9571,
+            "MAE": 153.71891942092878,
+            "RMSE": 188.55431142191213,
+            "MAPE_%": 8.934281682261588,
+            "MedianAPE_%": 6.948429526063965,
+            "R2": 0.981909356921969
+          },
+          "all_labels": {
+            "n": 9696,
+            "MAE": 206.15261414591333,
+            "RMSE": 654.1824198882057,
+            "MAPE_%": 11.007280839427095,
+            "MedianAPE_%": 7.054445659413186,
+            "R2": 0.8211922565371803
+          }
+        },
+        "Baseline: log-linear regression": {
+          "clean_labels": {
+            "n": 9571,
+            "MAE": 73.53163430227988,
+            "RMSE": 103.65847064432796,
+            "MAPE_%": 3.1531596755317826,
+            "MedianAPE_%": 2.7811152477894954,
+            "R2": 0.9945324764192301
+          },
+          "all_labels": {
+            "n": 9696,
+            "MAE": 127.06497215706881,
+            "RMSE": 638.2273666116978,
+            "MAPE_%": 5.3918380653887565,
+            "MedianAPE_%": 2.8253446756126563,
+            "R2": 0.8298078873577446
+          }
+        },
+        "LightGBM (unconstrained time features)": {
+          "clean_labels": {
+            "n": 9571,
+            "MAE": 58.50594730234669,
+            "RMSE": 85.49700358089841,
+            "MAPE_%": 2.6235925194851304,
+            "MedianAPE_%": 2.013159688946095,
+            "R2": 0.9962805145929209
+          },
+          "all_labels": {
+            "n": 9696,
+            "MAE": 112.08300779304159,
+            "RMSE": 633.0017400306688,
+            "MAPE_%": 4.86969505837893,
+            "MedianAPE_%": 2.0430153900695793,
+            "R2": 0.8325834484108545
+          }
+        },
+        "LightGBM + additive calendar effects (final)": {
+          "clean_labels": {
+            "n": 9571,
+            "MAE": 43.39504364738081,
+            "RMSE": 66.38553535485964,
+            "MAPE_%": 1.7798599649652118,
+            "MedianAPE_%": 1.470610793695153,
+            "R2": 0.9977575230151672
+          },
+          "all_labels": {
+            "n": 9696,
+            "MAE": 97.07363235945309,
+            "RMSE": 628.9641926730851,
+            "MAPE_%": 4.048665655358963,
+            "MedianAPE_%": 1.4860398072969487,
+            "R2": 0.8347123414647089
+          }
+        }
+      }
+    },
+    "Fold B": {
+      "train_window": "2025-01-01 .. 2025-07-31",
+      "test_window": "2025-08-01 .. 2025-09-30",
+      "n_train": 33253,
+      "n_test": 9429,
+      "models": {
+        "Baseline: median rate-per-mile x distance": {
+          "clean_labels": {
+            "n": 9297,
+            "MAE": 186.65955367177352,
+            "RMSE": 278.8002222066396,
+            "MAPE_%": 8.150311921949152,
+            "MedianAPE_%": 6.970413674053979,
+            "R2": 0.9576740892232276
+          },
+          "all_labels": {
+            "n": 9429,
+            "MAE": 235.23825566684667,
+            "RMSE": 663.077572119443,
+            "MAPE_%": 10.279020597467857,
+            "MedianAPE_%": 7.074289300606537,
+            "R2": 0.8044404143838182
+          }
+        },
+        "Baseline: log-linear regression": {
+          "clean_labels": {
+            "n": 9297,
+            "MAE": 106.79153230870843,
+            "RMSE": 151.69933254499145,
+            "MAPE_%": 4.486461175307884,
+            "MedianAPE_%": 4.047474458678863,
+            "R2": 0.987468951210737
+          },
+          "all_labels": {
+            "n": 9429,
+            "MAE": 156.71418302470127,
+            "RMSE": 635.6183231227051,
+            "MAPE_%": 6.614439784491265,
+            "MedianAPE_%": 4.117687776039834,
+            "R2": 0.8203019983361061
+          }
+        },
+        "LightGBM (unconstrained time features)": {
+          "clean_labels": {
+            "n": 9297,
+            "MAE": 37.966677237764245,
+            "RMSE": 54.45063521690608,
+            "MAPE_%": 1.7024199138992118,
+            "MedianAPE_%": 1.434266308211451,
+            "R2": 0.9983855448596073
+          },
+          "all_labels": {
+            "n": 9429,
+            "MAE": 88.70606187151785,
+            "RMSE": 613.1619837255581,
+            "MAPE_%": 3.9396086240418557,
+            "MedianAPE_%": 1.452653418160297,
+            "R2": 0.8327751279659242
+          }
+        },
+        "LightGBM + additive calendar effects (final)": {
+          "clean_labels": {
+            "n": 9297,
+            "MAE": 37.736210114972806,
+            "RMSE": 54.89735098413008,
+            "MAPE_%": 1.6679379691928686,
+            "MedianAPE_%": 1.3618552570955915,
+            "R2": 0.9983589460530007
+          },
+          "all_labels": {
+            "n": 9429,
+            "MAE": 88.46666063383914,
+            "RMSE": 612.3975208875916,
+            "MAPE_%": 3.921767648223664,
+            "MedianAPE_%": 1.3806899697565864,
+            "R2": 0.8331918449601384
+          }
+        }
+      }
+    }
+  },
+  "random_split_80_20_for_comparison": {
+    "n": 9666,
+    "MAE": 35.1169119956239,
+    "RMSE": 50.99702859600334,
+    "MAPE_%": 1.5363492488339365,
+    "MedianAPE_%": 1.2550389567387725,
+    "R2": 0.9985879490808568
+  },
+  "unseen_city_check": {
+    "held_out_cities": [
+      "Amarillo",
+      "Dayton",
+      "Detroit",
+      "Fresno",
+      "Jacksonville",
+      "Mobile",
+      "Montgomery",
+      "Providence"
+    ],
+    "rows_with_unseen_city": {
+      "n": 2140,
+      "MAE": 40.76298512668201,
+      "RMSE": 61.16979049302891,
+      "MAPE_%": 1.7126576526731556,
+      "MedianAPE_%": 1.4167026852703137,
+      "R2": 0.9980460139495958
+    },
+    "rows_with_seen_cities": {
+      "n": 7157,
+      "MAE": 37.77945860161395,
+      "RMSE": 54.75403413545813,
+      "MAPE_%": 1.6766053521973818,
+      "MedianAPE_%": 1.3755767068978184,
+      "R2": 0.9983461928278594
+    }
+  },
+  "feature_importance_gain_share": {
+    "log_distance": 0.96212,
+    "quote_signal": 0.01315,
+    "pickup_lon": 0.00783,
+    "equipment_code": 0.00717,
+    "delivery_lon": 0.00484,
+    "weight": 0.00157,
+    "market_index": 0.00098,
+    "quarter": 0.00093,
+    "days_to_quarter_end": 0.0005,
+    "pickup_lat": 0.00047,
+    "delivery_lat": 0.00042,
+    "bearing": 2e-05,
+    "day_of_week": 0.0,
+    "day_of_month": 0.0
+  },
+  "validation_prediction_summary": {
+    "count": 12000.0,
+    "mean": 2403.84,
+    "std": 1385.81,
+    "min": 209.64,
+    "25%": 1296.31,
+    "50%": 2082.93,
+    "75%": 3412.78,
+    "max": 6912.57
+  },
+  "december_predictions": [
+    {
+      "date": "2025-12-01",
+      "predicted_rate": 827.05
+    },
+    {
+      "date": "2025-12-02",
+      "predicted_rate": 834.54
+    },
+    {
+      "date": "2025-12-03",
+      "predicted_rate": 840.38
+    },
+    {
+      "date": "2025-12-04",
+      "predicted_rate": 846.72
+    },
+    {
+      "date": "2025-12-05",
+      "predicted_rate": 844.48
+    },
+    {
+      "date": "2025-12-06",
+      "predicted_rate": 837.23
+    },
+    {
+      "date": "2025-12-07",
+      "predicted_rate": 830.84
+    },
+    {
+      "date": "2025-12-08",
+      "predicted_rate": 832.02
+    },
+    {
+      "date": "2025-12-09",
+      "predicted_rate": 839.7
+    },
+    {
+      "date": "2025-12-10",
+      "predicted_rate": 846.91
+    },
+    {
+      "date": "2025-12-11",
+      "predicted_rate": 853.21
+    },
+    {
+      "date": "2025-12-12",
+      "predicted_rate": 851.92
+    },
+    {
+      "date": "2025-12-13",
+      "predicted_rate": 844.71
+    },
+    {
+      "date": "2025-12-14",
+      "predicted_rate": 839.32
+    },
+    {
+      "date": "2025-12-15",
+      "predicted_rate": 840.35
+    },
+    {
+      "date": "2025-12-16",
+      "predicted_rate": 847.32
+    },
+    {
+      "date": "2025-12-17",
+      "predicted_rate": 854.21
+    },
+    {
+      "date": "2025-12-18",
+      "predicted_rate": 860.42
+    },
+    {
+      "date": "2025-12-19",
+      "predicted_rate": 859.79
+    },
+    {
+      "date": "2025-12-20",
+      "predicted_rate": 854.83
+    },
+    {
+      "date": "2025-12-21",
+      "predicted_rate": 848.47
+    },
+    {
+      "date": "2025-12-22",
+      "predicted_rate": 849.53
+    },
+    {
+      "date": "2025-12-23",
+      "predicted_rate": 857.73
+    },
+    {
+      "date": "2025-12-24",
+      "predicted_rate": 867.34
+    },
+    {
+      "date": "2025-12-25",
+      "predicted_rate": 872.28
+    },
+    {
+      "date": "2025-12-26",
+      "predicted_rate": 872.04
+    },
+    {
+      "date": "2025-12-27",
+      "predicted_rate": 865.4
+    },
+    {
+      "date": "2025-12-28",
+      "predicted_rate": 859.62
+    },
+    {
+      "date": "2025-12-29",
+      "predicted_rate": 862.92
+    },
+    {
+      "date": "2025-12-30",
+      "predicted_rate": 870.92
+    },
+    {
+      "date": "2025-12-31",
+      "predicted_rate": 876.7
+    }
+  ]
+}

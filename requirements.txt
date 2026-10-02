@@ -1,0 +1,9 @@
+# scorer requirements (provided)
+matplotlib>=3.8,<4
+numpy>=1.26,<3
+pandas>=2.0,<3
+# solution
+lightgbm>=4.0,<5
+pytest>=7
+# report generation (optional, only for build_report.py)
+python-docx>=1.1
